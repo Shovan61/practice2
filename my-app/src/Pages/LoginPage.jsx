@@ -111,12 +111,16 @@ const ButtonSign = styled.div`
 `;
 
 const Body = styled.div`
-  height: 60vh;
+  min-height: 60vh;
   max-width: 1300px;
   width: 100vw;
   padding: 0 4.3rem;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Form = styled.div`
@@ -134,6 +138,16 @@ const Form = styled.div`
     font-weight: 200;
     font-size: 3rem;
     margin-bottom: 3rem;
+  }
+
+  @media (max-width: 830px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & h1 {
+      text-align: center;
+    }
   }
 `;
 
@@ -167,12 +181,17 @@ const Picture = styled.div`
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 //
 const Footer = styled.div`
   width: 100%;
-  height: 32vh;
+  min-height: 32vh;
   background-color: var(--grey);
   padding: 3rem 8rem;
   display: flex;
@@ -185,8 +204,15 @@ const SectionLeft = styled.div`
   & span {
     font-size: 3rem;
     font-weight: 300;
-    /* line-height: 1rem; */
-    /* letter-spacing: 2px; */
+  }
+
+  @media (max-width: 600px) {
+    width: 50%;
+    & span {
+      font-size: 2rem;
+      font-weight: 300;
+      margin-right: 1rem;
+    }
   }
 `;
 const SectionRight = styled.div`
@@ -199,6 +225,9 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   max-width: 1260px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const SecButton = styled.div`
