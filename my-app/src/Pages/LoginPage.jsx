@@ -29,6 +29,24 @@ function LoginPage() {
           <img src={loginhero} alt="loginhero" />
         </Picture>
       </Body>
+
+      <Footer>
+        <Container>
+          <SectionLeft>
+            <span>Find the right job or internship for you</span>
+          </SectionLeft>
+          <SectionRight>
+            <SecButton>Engineering</SecButton>
+            <SecButton>Business Development</SecButton>
+            <SecButton>Finance</SecButton>
+            <SecButton>Administritive Assistant</SecButton>
+            <SecButton>Retail Associate</SecButton>
+            <SecButton>Customer Service</SecButton>
+            <SecButton>Operation</SecButton>
+            <SecButton>Information Technology</SecButton>
+          </SectionRight>
+        </Container>
+      </Footer>
     </Wrapper>
   );
 }
@@ -131,16 +149,16 @@ const Button = styled.div`
   border: 2px solid #002fb1;
   border-radius: 10px;
   margin-top: 3rem;
-  transition: all 0.25s ease-in;
   cursor: pointer;
   & span {
     font-size: 20px;
     color: black;
   }
 
-  &:hover {
+  &:active {
     border: 2px solid #f0f4ff;
     background-color: #f1f0f0;
+    transform: scale(0.99);
   }
 `;
 
@@ -152,3 +170,46 @@ const Picture = styled.div`
 `;
 
 //
+const Footer = styled.div`
+  width: 100%;
+  height: 32vh;
+  background-color: var(--grey);
+  padding: 3rem 8rem;
+  display: flex;
+  justify-content: center;
+`;
+
+const SectionLeft = styled.div`
+  width: 40%;
+  height: 100%;
+  & span {
+    font-size: 3rem;
+    font-weight: 300;
+    /* line-height: 1rem; */
+    /* letter-spacing: 2px; */
+  }
+`;
+const SectionRight = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 60%;
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  max-width: 1260px;
+`;
+
+const SecButton = styled.div`
+  background-color: #d8d7d4;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  &:hover {
+    background-color: #b6b5b3;
+  }
+`;

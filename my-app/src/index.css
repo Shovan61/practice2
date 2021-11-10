@@ -4,6 +4,21 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+     Introduced in Internet Explorer 10.
+     See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+   */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:root {
+  --grey: #f3f2ef;
+  --blue: #0e76a8;
 }
 
 a {
@@ -26,3 +41,19 @@ body {
 
 /* #0e76a8 */
 /* #f3f2ef */
+
+@media only screen and (max-width: 768px) {
+  * {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  * {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  * {
+    font-size: 11px;
+  }
+}
