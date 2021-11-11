@@ -2,9 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 function Text() {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <span>
+        <span
+          style={{ fontWeight: "800", color: "#001c99", cursor: "pointer" }}
+        >
+          New marketing case study
+        </span>{" "}
+        -Learn how Innodisk drove 88% new visitor traffic from LinkedIn
+      </span>
+    </Wrapper>
+  );
 }
 
 export default Text;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  align-self: center;
+  text-align: center;
+  padding: 1rem 4rem;
+  max-width: 1300px;
+  & span {
+    text-decoration: underline;
+  }
+`;
