@@ -8,6 +8,8 @@ import messaging from "../images/nav-messaging.svg";
 import network from "../images/nav-network.svg";
 import notifications from "../images/nav-notifications.svg";
 import work from "../images/nav-work.svg";
+import me from "../images/me.jpg";
+import down from "../images/sort-down.svg";
 
 function NavBar() {
   return (
@@ -41,8 +43,24 @@ function NavBar() {
         </NavItems>
 
         <Profile>
-          <img src="" alt="" />
+          <img src={me} alt="" />
+          <Me>
+            <span>Me</span>
+            <img src={down} alt="" />
+          </Me>
         </Profile>
+
+        <div
+          style={{ backgroundColor: "#e0dddd", height: "100%", width: "1px" }}
+        />
+
+        <Work>
+          <img src={work} alt="" />
+          <WorkSpan>
+            <span>Work</span>
+            <img src={down} alt="" />
+          </WorkSpan>
+        </Work>
       </Container>
     </Wrapper>
   );
@@ -118,4 +136,57 @@ const NavLink = styled.div`
   }
 `;
 
-const Profile = styled.div``;
+const Profile = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+  align-self: center;
+  padding-top: 0.5rem;
+  & img {
+    height: 50%;
+    border-radius: 50%;
+  }
+`;
+
+const Me = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  & img {
+    height: 10px;
+    border-radius: 50%;
+  }
+  & span {
+    font-size: 11px;
+  }
+`;
+
+const Work = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  & img {
+    height: 25px;
+  }
+`;
+
+const WorkSpan = styled.div`
+  display: flex;
+  align-items: center;
+
+  & img {
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 0.2rem;
+  }
+  & span {
+    font-size: 11px;
+  }
+`;

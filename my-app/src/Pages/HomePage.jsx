@@ -6,6 +6,7 @@ function HomePage() {
   return (
     <Wrapper>
       <NavBar />
+      <Container></Container>
     </Wrapper>
   );
 }
@@ -16,4 +17,8 @@ const Wrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: var(--grey);
+`;
+
+const Container = styled.div`
+  max-width: 1300px;
 `;
