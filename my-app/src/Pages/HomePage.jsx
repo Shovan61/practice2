@@ -1,13 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { NavBar, Text } from "../Components";
+import { NavBar, Text, LeftCard, RightCard, MiddleCard } from "../Components";
 
 function HomePage() {
   return (
     <Wrapper>
       <NavBar />
       <Text />
-      <Container></Container>
+      <Container>
+        <LeftCard />
+        <MiddleCard />
+        <RightCard />
+      </Container>
     </Wrapper>
   );
 }
@@ -24,13 +28,11 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   align-self: center;
-  padding: 4rem;
+  padding: 2rem 1rem;
   max-width: 1300px;
-  width: 1280px;
+  /*width: 1280px; */
+  width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: 300px auto 300px;
-  & div {
-    border: 1px solid black;
-  }
+  grid-template-columns: 1fr 2fr 1fr;
 `;

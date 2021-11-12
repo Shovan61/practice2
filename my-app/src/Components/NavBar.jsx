@@ -116,6 +116,17 @@ const NavItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 2;
+    height: 8vh;
+    padding: 0 2rem;
+    padding-bottom: 1rem;
+  }
 `;
 
 const NavLink = styled.div`
@@ -133,6 +144,11 @@ const NavLink = styled.div`
     font-size: 12px;
     color: #444444;
     margin-top: 0.2rem;
+  }
+  @media (max-width: 883px) {
+    & span {
+      display: none;
+    }
   }
 `;
 
