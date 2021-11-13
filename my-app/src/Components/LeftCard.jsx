@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import me from "../images/me.jpg";
 import card from "../images/card-bg.svg";
+import item from "../images/item-icon.svg";
 
 function LeftCard() {
   return (
@@ -65,6 +66,29 @@ function LeftCard() {
           >
             <span>Views of your posts</span>
             <span style={{ color: "#00009ee" }}>225</span>
+          </div>
+
+          <div
+            style={{
+              height: "0.08px",
+              width: "100%",
+              backgroundColor: "#e7e5e5",
+            }}
+          />
+          <div
+            style={{
+              padding: "1rem",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              height: "10px",
+              marginTop: " 1rem",
+            }}
+          >
+            <img src={item} alt="item" />
+            <span style={{ alignSelf: "center", marginTop: "1.9rem" }}>
+              My Items
+            </span>
           </div>
         </Intro>
       </Card>

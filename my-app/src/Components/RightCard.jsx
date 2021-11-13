@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import feed from "../images/feed-icon.svg";
 import photo from "../images/photo.svg";
+import job from "../images/job.jfif";
+import unilever from "../images/unilever.jfif";
 
 function RightCard() {
   return (
@@ -21,6 +23,34 @@ function RightCard() {
           src={photo}
           alt=""
         />
+        <div
+          style={{
+            height: "30px",
+            width: "100%",
+            padding: "1rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: "3rem",
+          }}
+        >
+          <img style={{ height: "40px" }} src={unilever} alt="" />
+          <span style={{ fontSize: "12px" }}>Unilever</span>
+        </div>
+        <div
+          style={{
+            height: "30px",
+            width: "100%",
+            padding: "1rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginTop: "1.4rem",
+          }}
+        >
+          <img style={{ height: "40px" }} src={job} alt="" />
+          <span style={{ fontSize: "12px" }}>Bd Job</span>
+        </div>
       </Card>
     </Wrapper>
   );
