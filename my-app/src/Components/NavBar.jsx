@@ -10,8 +10,27 @@ import notifications from "../images/nav-notifications.svg";
 import work from "../images/nav-work.svg";
 import me from "../images/me.jpg";
 import down from "../images/sort-down.svg";
+import { logoutUser } from "../features/userReducer";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { auth } from "../firebase/init-firebase";
 
 function NavBar() {
+  const dispatch = useDispatch();
+  let history = useHistory();
+
+  const handleClick = () => {
+    logoutUser(auth);
+    const userInfo = {
+      name: "",
+      email: "",
+      photo: null,
+    };
+
+    dispatch(logoutUser(userInfo));
+    history.push("/");
+  };
+
   return (
     <Wrapper>
       <Container>
@@ -47,6 +66,9 @@ function NavBar() {
           <Me>
             <span>Me</span>
             <img src={down} alt="" />
+            <Logout>
+              <span onClick={handleClick}>Logout</span>
+            </Logout>
           </Me>
         </Profile>
 
@@ -167,17 +189,48 @@ const Profile = styled.div`
   }
 `;
 
+const Logout = styled.div`
+  padding: 1rem 2rem;
+  height: 60px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 1px 1px 2px #ddd, -1px -1px 2px #eee;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 100;
+  top: 0.8rem;
+  display: none;
+  & span {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ac0000;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
 const Me = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 0.5rem;
+  position: relative;
   & img {
     height: 10px;
     border-radius: 50%;
   }
   & span {
     font-size: 11px;
+  }
+
+  &:hover {
+    ${Logout} {
+      display: block;
+    }
   }
 `;
 

@@ -16,7 +16,7 @@ const userSlice = createSlice({
       state.photo = action.payload.photo;
     },
 
-    logoutUser: (state, action) => {
+    logoutUser: (state) => {
       state.name = "";
       state.email = "";
       state.photo = null;
@@ -26,4 +26,4 @@ const userSlice = createSlice({
 
 export const { loginUser, logoutUser } = userSlice.actions;
 
-export default userSlice;
+export default userSlice.reducer;

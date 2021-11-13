@@ -3,8 +3,24 @@ import styled from "styled-components";
 import logo from "../images/login-logo.svg";
 import google from "../images/google.svg";
 import loginhero from "../images/login-svg.svg";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../firebase/init-firebase";
+import { useHistory } from "react-router-dom";
+
+const loginWithGoogle = () => {
+  const provider = new GoogleAuthProvider();
+  return signInWithPopup(auth, provider);
+};
 
 function LoginPage() {
+  let history = useHistory();
+
+  const handleClick = () => {
+    loginWithGoogle()
+      .then((user) => history.push("/feed"))
+      .catch((err) => alert(err));
+  };
+
   return (
     <Wrapper>
       <Nav>
@@ -20,7 +36,7 @@ function LoginPage() {
           <h1>Welcome to your professional community</h1>
           <input type="text" placeholder="Email or phone number" />
           <input type="password" placeholder="Password (6+ charecters)" />
-          <Button>
+          <Button onClick={handleClick}>
             <img src={google} alt="google" />
             <span>Sign In With Google</span>
           </Button>
