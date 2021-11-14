@@ -17,7 +17,7 @@ function App() {
           email: user.email,
           photo: user.photoURL,
         };
-        console.log(userInfo);
+
         dispatch(loginUser(userInfo));
       }
     });
