@@ -14,13 +14,19 @@ import { logoutUser } from "../features/userReducer";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth } from "../firebase/init-firebase";
+import { signOut } from "firebase/auth";
 
 function NavBar() {
   const dispatch = useDispatch();
   let history = useHistory();
 
+  const logOut = () => {
+    return signOut(auth);
+  };
+
   const handleClick = () => {
-    logoutUser(auth);
+    logOut();
+
     const userInfo = {
       name: "",
       email: "",

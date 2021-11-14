@@ -24,6 +24,7 @@ const Wrapper = styled.div`
   background-color: var(--grey);
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 
 const Container = styled.div`
